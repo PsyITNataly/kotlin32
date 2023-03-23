@@ -1,6 +1,6 @@
 fun main() {
 
-    val result = (commission("MasterCart"));
+    val result = (commission("Мир"));
     println(result);
 
 }
