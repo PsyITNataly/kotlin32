@@ -1,13 +1,13 @@
 fun main() {
 
-    val result = (commission("Мир"));
+    val result = (commission("MasterCart"));
     println(result);
 
 }
 
 fun commission(typeCart: String): Int {
     return when {
-        typeCart == "MasterCart" || typeCart == "Maestro" -> MasterMaestro(1_000, 50_000)
+        typeCart == "MasterCart" || typeCart == "Maestro" -> MasterMaestro(150_500, 0)
         typeCart == "Visa" || typeCart == "Мир" -> VisaMir(1_000, 0)
         typeCart == "VKPay" -> VKPay(8_000, 5_000)
         else -> 0
@@ -19,6 +19,7 @@ fun MasterMaestro(transfer: Int, previos: Int): Int {
         transfer + previos > 600_000 -> -200
         transfer > 150_000 -> -100
         transfer > 75_000 -> transfer * 6 / 1000 + 20
+        transfer < 300 -> -300
 
         else -> 0
     }
